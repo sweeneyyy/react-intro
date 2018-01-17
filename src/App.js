@@ -6,13 +6,14 @@ import './App.css';
 class Post extends Component {
   render() {
     let authors = [
-      <Author name={this.props.authors[0]} />,
-      <Author name={this.props.authors[1]} />,
-      <Author name={this.props.authors[2]} />
+      <Author author={this.props.authors[0]} />,
+      <Author author={this.props.authors[1]} />,
+      <Author author={this.props.authors[2]} />
     ]
     return (
       <div className="Post">
         <h1>{this.props.title}!</h1>
+          <Author />
           <p>{this.props.body}</p>
         <h2>Comments:</h2>
           <p>{this.props.comments[0]}</p>

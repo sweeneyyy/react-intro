@@ -10,7 +10,7 @@ let post = {
     "Stealthy Stegosaurus",
     "Tiny T-Rex",
     "Ivory Iguanadon"
-  ],
+    ],
   body: "Check out this body property!",
   comments: [
     "First!", 
@@ -23,7 +23,7 @@ let post = {
 ReactDOM.render(
   <Post 
     title={post.title}
-    allAuthors={post.authors}
+    authors={post.authors}
     body={post.body}
     comments={post.comments}
   />, 

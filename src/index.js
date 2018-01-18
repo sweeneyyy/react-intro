@@ -4,28 +4,20 @@ import './index.css';
 import Post from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-let post = {
-  title: "Dinosaurs are awesome",
-  authors: [
-    "Stealthy Stegosaurus",
-    "Tiny T-Rex",
-    "Ivory Iguanadon"
-    ],
-  body: "Check out this body property!",
-  comments: [
-    "First!", 
-    "Great post", 
-    "Hire this author now"
-    ]
-}
+
+var posts = [{
+  title: 'Dinos rule!',
+  content: 'We are so neat',
+  author: 'T-Rex; King of Dinos',
+  comments: ['Eh, dinos are okay', 'Yeah, go dinos']
+}, {
+  title: 'So offended',
+  content: 'I am from way, way longer ago than these young dinos. Jurassic rules, cretaceous sucks!',
+  author: 'Stegasaurus',
+  comments: ['Cool it', 'Who cares, bro', 'Triassic or nothing!']
+}];
 
 
-ReactDOM.render(
-  <Post 
-    title={post.title}
-    authors={post.authors}
-    body={post.body}
-    comments={post.comments}
-  />, 
-  document.getElementById('root'));
+
+ReactDOM.render(<Post posts={posts} />, document.getElementById('root'));
 registerServiceWorker();

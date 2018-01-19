@@ -42,13 +42,11 @@ class Post extends Component {
             <Link to="/about">ABOUT</Link>
             <Link to="/favoritemovie">MOVIE</Link>
             <Link to="/favoritefood">FOOD</Link>
-
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            {/*<Route exact path="/blog" component={Post}/>*/}
+            <Route exact path="/blog" component={ () => <Blog post={allPosts} />} />
             <Route exact path="/favoritemovie" component={FavoriteMovie} />
-            <Route exact path="/favoritefood" component={FavoriteFood} />
-                      
+            <Route exact path="/favoritefood" component={FavoriteFood} />        
           <hr />
         </div>
       </Router>

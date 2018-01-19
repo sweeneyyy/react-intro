@@ -28,7 +28,7 @@ class Post extends Component {
               {p.body}
             </p>
           <h3>Comments:</h3>
-          <Comment comments={p.comments} />
+            <Comment comments={p.comments} />
           <br />
           <br />
           </div>
@@ -37,17 +37,20 @@ class Post extends Component {
     return (
       <Router>
         <div className="Post">
-          <Link to="/">HOME</Link>
-            <Link to="/blog">BLOG</Link>
-            <Link to="/about">ABOUT</Link>
-            <Link to="/favoritemovie">MOVIE</Link>
-            <Link to="/favoritefood">FOOD</Link>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/blog" component={ () => <Blog post={allPosts} />} />
-            <Route exact path="/favoritemovie" component={FavoriteMovie} />
-            <Route exact path="/favoritefood" component={FavoriteFood} />        
+          <nav>
+            <Link to="/">HOME</Link>{' '}
+            <Link to="/blog">BLOG</Link>{' '}
+            <Link to="/about">ABOUT</Link>{' '}
+            <Link to="/favoritemovie">MOVIE</Link>{' '}
+            <Link to="/favoritefood">FOOD</Link>{' '}
+          </nav>
           <hr />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/blog" component={ () => <Blog post={allPosts} />} />
+          <Route exact path="/favoritemovie" component={FavoriteMovie} />
+          <Route exact path="/favoritefood" component={FavoriteFood} />        
+          
         </div>
       </Router>
     );

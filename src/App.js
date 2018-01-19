@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import './App.css';
+//importing react router
+import{
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
+//importing page components
+import Home from './Home.js';
+import About from './About.js';
+import Blog from './Blog.js';
 import Author from './Author.js';
 import Comment from './Comment.js';
-import './App.css';
+import FavoriteMovie from './FavoriteMovie.js';
+import FavoriteFood from './FavoriteFood.js';
 
 
 class Post extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      moodPoints: 1
-    }
-  }
-
-  increaseMood(e){
-    if(this.state.moodPoints <=9){
-        this.setState({moodPoints: this.state.moodPoints +1})
-    }else{
-        this.setState({moodPoints: 1})
-    }
-
-    this.state.moodPoints<=9?this.setState({moodPoints: this.state.moodPoints +1}):this.setState({moodPoints: 1})
-
-  }
 
   render() {
     const allPosts = this.props.posts.map(p => {
@@ -39,21 +34,24 @@ class Post extends Component {
           </div>
     });
 
-
     return (
-      <div className="Post">
-        <header className="Post-header">
-          <h1 className="Post-title">Dino Blog</h1>
-            <p className="Post-intro">
-              All the latest and greatest things from 65 million years ago
-            </p>
-        </header>
-        <h3>On a scale of 1-10 this is how I feel</h3>
-        <p>Current mood: {this.state.moodPoints}</p>
-        <button onClick={(e)=> this.increaseMood(e)}></button>
-          {allPosts}
-        <hr />
-      </div>
+      <Router>
+        <div className="Post">
+          <Link to="/">HOME</Link>
+            <Link to="/blog">BLOG</Link>
+            <Link to="/about">ABOUT</Link>
+            <Link to="/favoritemovie">MOVIE</Link>
+            <Link to="/favoritefood">FOOD</Link>
+
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            {/*<Route exact path="/blog" component={Post}/>*/}
+            <Route exact path="/favoritemovie" component={FavoriteMovie} />
+            <Route exact path="/favoritefood" component={FavoriteFood} />
+                      
+          <hr />
+        </div>
+      </Router>
     );
   }
 }

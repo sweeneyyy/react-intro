@@ -4,7 +4,6 @@ import './index.css';
 import Post from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-
 var posts = [{
   title: 'Dinos rule!',
   content: 'We are so neat',
